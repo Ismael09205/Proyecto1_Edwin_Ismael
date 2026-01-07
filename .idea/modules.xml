@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Proyecto 1.iml" filepath="$PROJECT_DIR$/.idea/Proyecto 1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sistemalicencias.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sistemalicencias.main.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SistemaLicencias.iml" filepath="$PROJECT_DIR$/.idea/modules/SistemaLicencias.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SistemaLicencias.main.iml" filepath="$PROJECT_DIR$/.idea/modules/SistemaLicencias.main.iml" />
+>>>>>>> Version2
     </modules>
   </component>
 </project>
