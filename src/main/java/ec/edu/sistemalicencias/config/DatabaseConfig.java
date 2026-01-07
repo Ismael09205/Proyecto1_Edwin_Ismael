@@ -30,10 +30,10 @@ public class DatabaseConfig {
      */
     private DatabaseConfig() {
         // Configuración por defecto - puede ser sobreescrita mediante properties
-        this.driver = "com.mysql.cj.jdbc.Driver";
-        this.url = "jdbc:mysql://localhost:3306/sistema_licencias?useSSL=false&serverTimezone=UTC";
-        this.usuario = "root";
-        this.password = "root";
+        this.driver = "org.postgresql.Driver";
+        this.url = "jdbc:postgresql://localhost:5432/sistema_licencias";
+        this.usuario = "postgres";
+        this.password = "Ipdemon001";
 
         try {
             // Cargar el driver JDBC

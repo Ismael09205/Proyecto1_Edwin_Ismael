@@ -49,8 +49,8 @@ public class PruebaPsicometricaDAO implements Persistible<PruebaPsicometrica> {
      * @throws BaseDatosException Si ocurre un error
      */
     private Long insertar(PruebaPsicometrica prueba) throws BaseDatosException {
-        String sql = "INSERT INTO pruebas_psicometricas (conductor_id, nota_reaccion, " +
-                "nota_atencion, nota_coordinacion, nota_percepcion, nota_psicologica, observaciones, fecha_realizacion, aprobado) " +
+        String sql = "INSERT INTO pruebas_psicometricas (conductor_id, puntaje_reaccion, " +
+                "puntaje_visual, puntaje_auditivo, puntaje_motor, puntaje_psicologico, observaciones, fecha_prueba, aprobado) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         Connection conn = null;
@@ -63,9 +63,9 @@ public class PruebaPsicometricaDAO implements Persistible<PruebaPsicometrica> {
 
             stmt.setLong(1, prueba.getConductorId());
             stmt.setDouble(2, prueba.getNotaReaccion());
+            stmt.setDouble(5, prueba.getNotaPercepcion());
             stmt.setDouble(3, prueba.getNotaAtencion());
             stmt.setDouble(4, prueba.getNotaCoordinacion());
-            stmt.setDouble(5, prueba.getNotaPercepcion());
             stmt.setDouble(6, prueba.getNotaPsicologica());
             stmt.setString(7, prueba.getObservaciones());
 
@@ -108,8 +108,8 @@ public class PruebaPsicometricaDAO implements Persistible<PruebaPsicometrica> {
      * @throws BaseDatosException Si ocurre un error
      */
     private void actualizar(PruebaPsicometrica prueba) throws BaseDatosException {
-        String sql = "UPDATE pruebas_psicometricas SET nota_reaccion = ?, nota_atencion = ?, " +
-                "nota_coordinacion = ?, nota_percepcion = ?, nota_psicologica = ?, " +
+        String sql = "UPDATE pruebas_psicometricas SET puntaje_reaccion = ?, puntaje_visual = ?, " +
+                "puntaje_auditivo = ?, puntaje_motor = ?, puntaje_psicologico = ?, " +
                 "observaciones = ? WHERE id = ?";
 
         Connection conn = null;
@@ -120,9 +120,9 @@ public class PruebaPsicometricaDAO implements Persistible<PruebaPsicometrica> {
             stmt = conn.prepareStatement(sql);
 
             stmt.setDouble(1, prueba.getNotaReaccion());
+            stmt.setDouble(4, prueba.getNotaPercepcion());
             stmt.setDouble(2, prueba.getNotaAtencion());
             stmt.setDouble(3, prueba.getNotaCoordinacion());
-            stmt.setDouble(4, prueba.getNotaPercepcion());
             stmt.setDouble(5, prueba.getNotaPsicologica());
             stmt.setString(6, prueba.getObservaciones());
             stmt.setLong(7, prueba.getId());
@@ -181,10 +181,10 @@ public class PruebaPsicometricaDAO implements Persistible<PruebaPsicometrica> {
      * @throws BaseDatosException Si ocurre un error
      */
     public List<PruebaPsicometrica> buscarPorConductor(Long conductorId) throws BaseDatosException {
-        String sql = "SELECT id, conductor_id, nota_reaccion," +
-                " nota_reaccion, nota_atencion, nota_coordinacion," +
-                " nota_percepcion,nota_psicologica,observaciones, fecha_realizacion,aprobado FROM pruebas_psicometricas " +
-                "WHERE conductor_id = ? ORDER BY fecha_realizacion DESC";
+        String sql = "SELECT id, conductor_id," +
+                " puntaje_reaccion, nota_visual, puntaje_auditivo," +
+                " puntaje_motor, puntaje_psicologico, observaciones, fecha_prueba,aprobado FROM pruebas_psicometricas " +
+                "WHERE conductor_id = ? ORDER BY fecha_prueba DESC";
 
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -218,10 +218,10 @@ public class PruebaPsicometricaDAO implements Persistible<PruebaPsicometrica> {
      * @throws BaseDatosException Si ocurre un error
      */
     public PruebaPsicometrica obtenerUltimaPruebaAprobada(Long conductorId) throws BaseDatosException {
-        String sql = "SELECT id, conductor_id, nota_reaccion," +
-                " nota_atencion, nota_coordinacion, nota_percepcion," +
-                " nota_psicologica,observaciones, fecha_realizacion, aprobado FROM pruebas_psicometricas" +
-                " WHERE conductor_id = ? ORDER BY fecha_realizacion DESC";
+        String sql = "SELECT id, conductor_id, puntaje_reaccion," +
+                " puntaje_visual, puntaje_auditivo, puntaje_motor," +
+                " puntaje_psicologico,observaciones, fecha_prueba, aprobado FROM pruebas_psicometricas" +
+                " WHERE conductor_id = ? ORDER BY fecha_prueba DESC";
 
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -296,13 +296,14 @@ public class PruebaPsicometricaDAO implements Persistible<PruebaPsicometrica> {
 // puntaje_auditivo -> notaAtencion
 // puntaje_motor   -> notaCoordinacion
 // puntaje_psicologico -> notaPsicologica
-        prueba.setNotaPercepcion(rs.getDouble("nota_percepcion"));
-        prueba.setNotaAtencion(rs.getDouble("nota_atencion"));
-        prueba.setNotaCoordinacion(rs.getDouble("nota_coordinacion"));
-        prueba.setNotaPsicologica(rs.getDouble("nota_psicologica"));
+        prueba.setNotaReaccion(rs.getDouble("puntaje_reaccion"));
+        prueba.setNotaAtencion(rs.getDouble("puntaje_auditivo"));
+        prueba.setNotaCoordinacion(rs.getDouble("puntaje_motor"));
+        prueba.setNotaPercepcion(rs.getDouble("puntaje_visual"));
+        prueba.setNotaPsicologica(rs.getDouble("puntaje_psicologico"));
         prueba.setObservaciones(rs.getString("observaciones"));
 
-        Date fecha = rs.getDate("fecha_realizacion");
+        Date fecha = rs.getDate("fecha_prueba");
         if (fecha != null) {
             prueba.setFechaRealizacion(fecha.toLocalDate().atStartOfDay());
         }
