@@ -5,161 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6fcfc17-4119-4fa4-94ce-02e2dcb15fc1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/dto/ReporteUsuarioDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/view/GenerarReporteView.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/view/GenerarReporteView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/8.14/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/8.14/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/8.14/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/8.14/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/8.14/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/8.14/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/8.14/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/8.14/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/8.14/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/8.14/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/file-system.probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.idea/libraries/postgresql_42_7_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/MainPruebaTemporal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/config/DatabaseConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/controller/LicenciaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/dao/ConductorDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/dao/LicenciaDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/dao/PruebaPsicometricaDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/model/TipoLicenciaConstantes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/model/TipoSangreConstantes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/model/entities/Conductor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/model/entities/Licencia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/model/entities/PruebaPsicometrica.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/model/exceptions/BaseDatosException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/model/exceptions/DatosInvalidosException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/model/exceptions/DocumentoInvalidoException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/model/exceptions/LicenciaException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/model/interfaces/Persistible.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/model/interfaces/Validable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/service/LicenciaService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/util/PDFGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/view/ConsultarLicenciasView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/view/ConsultarLicenciasView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/view/EmitirLicenciaView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/view/GestionConductoresView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/view/GestionConductoresView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/view/MainView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/view/PruebasPsicometricasView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/classes/java/main/ec/edu/sistemalicencias/view/ValidarDocumentosView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/distributions/SistemaLicencias-1.0-SNAPSHOT.tar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/distributions/SistemaLicencias-1.0-SNAPSHOT.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/libs/SistemaLicencias-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/reports/problems/problems-report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/scripts/SistemaLicencias" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/scripts/SistemaLicencias.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/MainPruebaTemporal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/config/DatabaseConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/controller/LicenciaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/dao/ConductorDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/dao/LicenciaDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/dao/PruebaPsicometricaDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/model/TipoLicenciaConstantes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/model/TipoSangreConstantes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/model/entities/Conductor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/model/entities/Licencia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/model/entities/PruebaPsicometrica.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/model/exceptions/BaseDatosException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/model/exceptions/DatosInvalidosException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/model/exceptions/DocumentoInvalidoException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/model/exceptions/LicenciaException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/model/interfaces/Persistible.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/model/interfaces/Validable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/service/LicenciaService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/util/PDFGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/view/ConsultarLicenciasView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/view/ConsultarLicenciasView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/view/EmitirLicenciaView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/view/GestionConductoresView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/view/GestionConductoresView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/view/MainView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/view/PruebasPsicometricasView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/out/production/classes/ec/edu/sistemalicencias/view/ValidarDocumentosView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/MainPruebaTemporal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainPruebaTemporal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/config/DatabaseConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/controller/LicenciaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/dao/ConductorDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/dao/LicenciaDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/dao/PruebaPsicometricaDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/model/TipoLicenciaConstantes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/model/TipoSangreConstantes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/model/entities/Conductor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/model/entities/Licencia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/model/entities/PruebaPsicometrica.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/model/exceptions/BaseDatosException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/model/exceptions/DatosInvalidosException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/model/exceptions/DocumentoInvalidoException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/model/exceptions/LicenciaException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/model/interfaces/Persistible.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/model/interfaces/Validable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/service/LicenciaService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/util/PDFGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/view/ConsultarLicenciasView.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/view/ConsultarLicenciasView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/view/EmitirLicenciaView.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/view/EmitirLicenciaView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/view/GestionConductoresView.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/view/GestionConductoresView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/view/MainView.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/view/MainView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/view/PruebasPsicometricasView.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/view/PruebasPsicometricasView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/view/ValidarDocumentosView.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaGestorLicencias-main/src/main/java/ec/edu/sistemalicencias/view/ValidarDocumentosView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/config/DatabaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/config/DatabaseConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/dao/ConductorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/dao/ConductorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/dao/LicenciaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/dao/LicenciaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/dao/PruebaPsicometricaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/dao/PruebaPsicometricaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ec/edu/sistemalicencias/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ec/edu/sistemalicencias/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ec/edu/sistemalicencias/view/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ec/edu/sistemalicencias/view/MainView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MainPruebaTemporal.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/controller/LicenciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/controller/LicenciaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/model/entities/Conductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/model/entities/Conductor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/service/LicenciaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/service/LicenciaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/view/MainView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/view/MainView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/view/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ec/edu/sistemalicencias/view/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,27 +82,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="37wp3NTCxe58rVxvqrGOlQJSxAh" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Proyecto1_Edwin_Ismael [:ec.edu.sistemalicencias.Main.main()].executor": "Run",
-    "Gradle.Proyecto1_Edwin_Ismael [:ec.edu.sistemalicencias.MainPruebaTemporal.main()].executor": "Run",
-    "Gradle.Proyecto1_Edwin_Ismael [build].executor": "Run",
-    "Gradle.Proyecto1_Edwin_Ismael [clean].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "V2.0__Incomplete",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Proyecto1_Edwin_Ismael [:ec.edu.sistemalicencias.Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Proyecto1_Edwin_Ismael [:ec.edu.sistemalicencias.MainPruebaTemporal.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Proyecto1_Edwin_Ismael [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Proyecto1_Edwin_Ismael [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;V2.0__Incomplete&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jeffe/OneDrive/Documentos/POO/Proyectos/Proyecto1_Edwin_Ismael&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ec.edu.sistemalicencias.Main" />

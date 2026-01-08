@@ -29,6 +29,7 @@ public class Conductor implements Validable {
     private String tipoSangre;
     private boolean documentosValidados;
     private String observaciones;
+    private LocalDate fechaRegistro;
 
     /**
      * Constructor por defecto
@@ -50,6 +51,7 @@ public class Conductor implements Validable {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.fechaNacimiento = fechaNacimiento;
+        this.fechaRegistro = LocalDate.now();
     }
 
     // Getters y Setters con validaciones (Encapsulamiento)
@@ -114,6 +116,8 @@ public class Conductor implements Validable {
         return fechaNacimiento;
     }
 
+    public LocalDate getFechaRegistro(){return fechaRegistro;}
+
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
@@ -129,6 +133,7 @@ public class Conductor implements Validable {
     public String getTelefono() {
         return telefono;
     }
+
 
     /**
      * Establece el teléfono validando el formato

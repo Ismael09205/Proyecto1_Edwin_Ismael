@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SistemaLicencias.iml" filepath="$PROJECT_DIR$/.idea/modules/SistemaLicencias.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SistemaLicencias.main.iml" filepath="$PROJECT_DIR$/.idea/modules/SistemaLicencias.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SistemaLicencias.test.iml" filepath="$PROJECT_DIR$/.idea/modules/SistemaLicencias.test.iml" />
     </modules>
   </component>

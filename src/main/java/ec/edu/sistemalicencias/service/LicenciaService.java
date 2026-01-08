@@ -3,6 +3,7 @@ package ec.edu.sistemalicencias.service;
 import ec.edu.sistemalicencias.dao.ConductorDAO;
 import ec.edu.sistemalicencias.dao.LicenciaDAO;
 import ec.edu.sistemalicencias.dao.PruebaPsicometricaDAO;
+import ec.edu.sistemalicencias.dto.ReporteUsuarioDTO;
 import ec.edu.sistemalicencias.model.TipoLicenciaConstantes;
 import ec.edu.sistemalicencias.model.entities.Conductor;
 import ec.edu.sistemalicencias.model.entities.Licencia;
@@ -12,7 +13,9 @@ import ec.edu.sistemalicencias.model.exceptions.DocumentoInvalidoException;
 import ec.edu.sistemalicencias.model.exceptions.LicenciaException;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Servicio que encapsula la lógica de negocio para la gestión de licencias.
@@ -39,6 +42,7 @@ public class LicenciaService {
 
     /**
      * Registra un nuevo conductor en el sistema
+     *
      * @param conductor Conductor a registrar
      * @return ID del conductor registrado
      * @throws LicenciaException Si hay errores de validación o persistencia
@@ -71,6 +75,7 @@ public class LicenciaService {
 
     /**
      * Actualiza los datos de un conductor existente
+     *
      * @param conductor Conductor con datos actualizados
      * @throws LicenciaException Si hay errores
      */
@@ -94,9 +99,10 @@ public class LicenciaService {
 
     /**
      * Valida los documentos de un conductor
-     * @param conductorId ID del conductor
+     *
+     * @param conductorId       ID del conductor
      * @param documentosValidos Resultado de la validación
-     * @param observaciones Observaciones de la validación
+     * @param observaciones     Observaciones de la validación
      * @throws LicenciaException Si hay errores
      */
     public void validarDocumentos(Long conductorId, boolean documentosValidos, String observaciones)
@@ -119,6 +125,7 @@ public class LicenciaService {
 
     /**
      * Registra una prueba psicométrica para un conductor
+     *
      * @param prueba Prueba psicométrica a registrar
      * @return ID de la prueba registrada
      * @throws LicenciaException Si hay errores
@@ -141,8 +148,9 @@ public class LicenciaService {
 
     /**
      * Emite una nueva licencia de conducir
-     * @param conductorId ID del conductor
-     * @param tipoLicencia Tipo de licencia a emitir (usar constantes de TipoLicenciaConstantes)
+     *
+     * @param conductorId          ID del conductor
+     * @param tipoLicencia         Tipo de licencia a emitir (usar constantes de TipoLicenciaConstantes)
      * @param pruebaPsicometricaId ID de la prueba psicométrica (opcional)
      * @return Licencia emitida
      * @throws LicenciaException Si no se cumplen los requisitos
@@ -217,6 +225,7 @@ public class LicenciaService {
 
     /**
      * Busca un conductor por cédula
+     *
      * @param cedula Número de cédula
      * @return Conductor encontrado o null
      * @throws LicenciaException Si hay errores
@@ -231,6 +240,7 @@ public class LicenciaService {
 
     /**
      * Busca un conductor por ID
+     *
      * @param id ID del conductor
      * @return Conductor encontrado o null
      * @throws LicenciaException Si hay errores
@@ -245,6 +255,7 @@ public class LicenciaService {
 
     /**
      * Obtiene todos los conductores registrados
+     *
      * @return Lista de conductores
      * @throws LicenciaException Si hay errores
      */
@@ -258,6 +269,7 @@ public class LicenciaService {
 
     /**
      * Busca conductores por nombre
+     *
      * @param nombre Nombre a buscar
      * @return Lista de conductores
      * @throws LicenciaException Si hay errores
@@ -272,6 +284,7 @@ public class LicenciaService {
 
     /**
      * Obtiene las pruebas psicométricas de un conductor
+     *
      * @param conductorId ID del conductor
      * @return Lista de pruebas
      * @throws LicenciaException Si hay errores
@@ -286,6 +299,7 @@ public class LicenciaService {
 
     /**
      * Obtiene la última prueba aprobada de un conductor
+     *
      * @param conductorId ID del conductor
      * @return Última prueba aprobada o null
      * @throws LicenciaException Si hay errores
@@ -300,6 +314,7 @@ public class LicenciaService {
 
     /**
      * Busca una licencia por número
+     *
      * @param numeroLicencia Número de licencia
      * @return Licencia encontrada o null
      * @throws LicenciaException Si hay errores
@@ -314,6 +329,7 @@ public class LicenciaService {
 
     /**
      * Obtiene las licencias de un conductor
+     *
      * @param conductorId ID del conductor
      * @return Lista de licencias
      * @throws LicenciaException Si hay errores
@@ -328,6 +344,7 @@ public class LicenciaService {
 
     /**
      * Obtiene todas las licencias del sistema
+     *
      * @return Lista de licencias
      * @throws LicenciaException Si hay errores
      */
@@ -341,6 +358,7 @@ public class LicenciaService {
 
     /**
      * Obtiene las licencias vigentes
+     *
      * @return Lista de licencias vigentes
      * @throws LicenciaException Si hay errores
      */
@@ -354,8 +372,9 @@ public class LicenciaService {
 
     /**
      * Desactiva una licencia
+     *
      * @param licenciaId ID de la licencia
-     * @param motivo Motivo de desactivación
+     * @param motivo     Motivo de desactivación
      * @throws LicenciaException Si hay errores
      */
     public void desactivarLicencia(Long licenciaId, String motivo) throws LicenciaException {
@@ -374,4 +393,46 @@ public class LicenciaService {
             throw new LicenciaException("Error al desactivar licencia", e);
         }
     }
+
+    public List<ReporteUsuarioDTO> generarReporteSimplificado() throws LicenciaException {
+        try {
+            List<Conductor> conductors = conductorDAO.obtenerTodos();
+            List<Licencia> licencias = licenciaDAO.obtenerTodas();
+            List<ReporteUsuarioDTO> reporte = new ArrayList<>();
+
+            for (Conductor c : conductors) {
+                List<Licencia> misLicencias = licencias.stream()
+                        .filter(l -> l.getConductorId().equals(c.getId()))
+                        .collect(Collectors.toList());
+
+                String estadoFinal = "No Emitidos";
+
+                if (!misLicencias.isEmpty()) {
+                    boolean tieneVigente = misLicencias.stream().anyMatch(Licencia::estaVigente);
+
+                    if (tieneVigente) {
+                        estadoFinal = "Emitidos";
+                    } else {
+                        estadoFinal = "Vencidos";
+                    }
+                }
+
+                reporte.add(new ReporteUsuarioDTO(
+                        c.getId(),
+                        c.getCedula(),
+                        c.getNombres(),
+                        c.getApellidos(),
+                        estadoFinal.equals("Emitidos"),
+                        estadoFinal,
+                        c.getFechaRegistro(),
+                        c.getTelefono()
+                ));
+            }
+            return reporte;
+
+        } catch (BaseDatosException e) {
+            throw new LicenciaException("Error generando reporte", e);
+        }
+    }
 }
+
