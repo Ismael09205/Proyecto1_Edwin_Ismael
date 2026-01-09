@@ -2,9 +2,7 @@
 package ec.edu.sistemalicencias;
 
 import ec.edu.sistemalicencias.config.DatabaseConfig;
-import ec.edu.sistemalicencias.view.IniciarSesionView;
 import ec.edu.sistemalicencias.view.LoginView;
-import ec.edu.sistemalicencias.view.MainView;
 
 import javax.swing.*;
 
@@ -18,7 +16,7 @@ import javax.swing.*;
 public class Main {
 
     /**
-     * Método principal que inicia la aplicación
+     * Método principal que inicia la aplicacióna
      */
     public static void main(String[] args) {
 

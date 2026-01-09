@@ -33,7 +33,7 @@ public class LoginView extends JFrame {
         // Configuración básica de la ventana
 
         setTitle("Bienvenido - Sistema de Licencias de Conducir");
-        setSize(750, 550);
+        setSize(1024, 576);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setContentPane(PanelLogin);
@@ -160,8 +160,8 @@ public class LoginView extends JFrame {
                     String rol = usuarioEncontrado.getRol();
 
                     if (rol.equalsIgnoreCase("Administrador")) {
-                        // Aquí abres la de admin si la tienes
-                        JOptionPane.showMessageDialog(this, "Bienvenido Administrador");
+                        AdminGestUsuarioView adminview = new AdminGestUsuarioView();
+                        adminview.setVisible(true);
                     }
                     else if (rol.equalsIgnoreCase("Analista")) {
                         MainView analistView = new MainView();

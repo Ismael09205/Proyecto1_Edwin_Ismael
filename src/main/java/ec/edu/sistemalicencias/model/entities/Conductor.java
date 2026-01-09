@@ -29,12 +29,14 @@ public class Conductor implements Validable {
     private String tipoSangre;
     private boolean documentosValidados;
     private String observaciones;
+    private LocalDate fechaRegistro;
 
     /**
      * Constructor por defecto
      */
     public Conductor() {
         this.documentosValidados = false;
+        this.fechaRegistro = LocalDate.now();
     }
 
     /**
@@ -114,9 +116,13 @@ public class Conductor implements Validable {
         return fechaNacimiento;
     }
 
+    public LocalDate getFechaRegistro(){return fechaRegistro;}
+
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
+
+    public void setFechaRegistro(LocalDate fechaRegistro) {this.fechaRegistro = fechaRegistro;}
 
     public String getDireccion() {
         return direccion;

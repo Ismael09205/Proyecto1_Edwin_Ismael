@@ -6,7 +6,6 @@ import ec.edu.sistemalicencias.model.exceptions.BaseDatosException;
 import ec.edu.sistemalicencias.model.interfaces.Persistible;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -173,6 +172,7 @@ public class ConductorDAO implements Persistible<Conductor> {
         }
     }
 
+
     /**
      * Busca un conductor por su cédula
      * @param cedula Número de cédula
@@ -331,6 +331,10 @@ public class ConductorDAO implements Persistible<Conductor> {
         conductor.setDocumentosValidados(rs.getBoolean("documentos_validados"));
         conductor.setObservaciones(rs.getString("observaciones"));
 
+        Date fechaReg = rs.getDate("fechaRegistro");
+        if (fechaReg != null){
+            conductor.setFechaRegistro(fechaReg.toLocalDate());
+        }
         return conductor;
     }
 

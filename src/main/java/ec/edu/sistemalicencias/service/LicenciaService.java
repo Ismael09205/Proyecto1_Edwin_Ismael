@@ -3,6 +3,7 @@ package ec.edu.sistemalicencias.service;
 import ec.edu.sistemalicencias.dao.ConductorDAO;
 import ec.edu.sistemalicencias.dao.LicenciaDAO;
 import ec.edu.sistemalicencias.dao.PruebaPsicometricaDAO;
+import ec.edu.sistemalicencias.dto.ReporteUsuarioDTO;
 import ec.edu.sistemalicencias.model.TipoLicenciaConstantes;
 import ec.edu.sistemalicencias.model.entities.Conductor;
 import ec.edu.sistemalicencias.model.entities.Licencia;
@@ -11,8 +12,9 @@ import ec.edu.sistemalicencias.model.exceptions.BaseDatosException;
 import ec.edu.sistemalicencias.model.exceptions.DocumentoInvalidoException;
 import ec.edu.sistemalicencias.model.exceptions.LicenciaException;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Servicio que encapsula la lógica de negocio para la gestión de licencias.
@@ -372,6 +374,47 @@ public class LicenciaService {
 
         } catch (BaseDatosException e) {
             throw new LicenciaException("Error al desactivar licencia", e);
+        }
+    }
+
+    public List<ReporteUsuarioDTO> generarReporteSimplificado() throws LicenciaException {
+        try {
+            List<Conductor> conductors = conductorDAO.obtenerTodos();
+            List<Licencia> licencias = licenciaDAO.obtenerTodas();
+            List<ReporteUsuarioDTO> reporte = new ArrayList<>();
+
+            for (Conductor c : conductors) {
+                List<Licencia> misLicencias = licencias.stream()
+                        .filter(l -> l.getConductorId().equals(c.getId()))
+                        .collect(Collectors.toList());
+
+                String estadoFinal = "No Emitido";
+
+                if (!misLicencias.isEmpty()) {
+                    boolean tieneVigente = misLicencias.stream().anyMatch(Licencia::estaVigente);
+
+                    if (tieneVigente) {
+                        estadoFinal = "Emitido";
+                    } else {
+                        estadoFinal = "Vencido";
+                    }
+                }
+
+                reporte.add(new ReporteUsuarioDTO(
+                        c.getId(),
+                        c.getCedula(),
+                        c.getNombres(),
+                        c.getApellidos(),
+                        estadoFinal.equals("Emitido"),
+                        estadoFinal,
+                        c.getFechaRegistro(),
+                        c.getTelefono()
+                ));
+            }
+            return reporte;
+
+        } catch (BaseDatosException e) {
+            throw new LicenciaException("Error generando reporte", e);
         }
     }
 }

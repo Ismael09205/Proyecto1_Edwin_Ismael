@@ -1,6 +1,7 @@
 package ec.edu.sistemalicencias.controller;
 
 import com.itextpdf.text.DocumentException;
+import ec.edu.sistemalicencias.dto.ReporteUsuarioDTO;
 import ec.edu.sistemalicencias.model.entities.Conductor;
 import ec.edu.sistemalicencias.model.entities.Licencia;
 import ec.edu.sistemalicencias.model.entities.PruebaPsicometrica;
@@ -307,5 +308,8 @@ public class LicenciaController {
                 JOptionPane.QUESTION_MESSAGE);
 
         return respuesta == JOptionPane.YES_OPTION;
+    }
+    public List<ReporteUsuarioDTO> obtenerReporte() throws LicenciaException {
+        return licenciaService.generarReporteSimplificado();
     }
 }
