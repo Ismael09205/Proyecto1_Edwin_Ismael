@@ -148,7 +148,7 @@ public class PanelEliminarView {
         panel1 = new JPanel();
         panel1.setLayout(new GridLayoutManager(3, 1, new Insets(0, 0, 0, 0), -1, -1));
         PanelBuscarEliminar = new JPanel();
-        PanelBuscarEliminar.setLayout(new GridLayoutManager(1, 4, new Insets(0, 0, 0, 0), -1, -1));
+        PanelBuscarEliminar.setLayout(new GridLayoutManager(1, 4, new Insets(5, 5, 5, 5), -1, -1));
         panel1.add(PanelBuscarEliminar, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTH, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, true));
         PanelBuscarEliminar.setBorder(BorderFactory.createTitledBorder(null, "Buscar usuario a eliminar", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
         lblIngresarCredencial = new JLabel();

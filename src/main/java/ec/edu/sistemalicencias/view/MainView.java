@@ -2,6 +2,7 @@ package ec.edu.sistemalicencias.view;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.uiDesigner.core.Spacer;
 import ec.edu.sistemalicencias.controller.LicenciaController;
 import ec.edu.sistemalicencias.model.entities.Conductor;
 import ec.edu.sistemalicencias.model.entities.Licencia;
@@ -183,7 +184,7 @@ public class MainView extends JFrame {
         btnGenerarReporte.addActionListener(e -> abrirReporte());
 
         // Botón Salir
-        btnSalir.addActionListener(e -> salirAplicacion());
+        btnSalir.addActionListener(e -> volverAlMain());
     }
 
     /**
@@ -353,19 +354,19 @@ public class MainView extends JFrame {
     }
 
     /**
-     * Cierra la aplicación con confirmación
+     * Cierra la sesion con confirmación
      */
-    private void salirAplicacion() {
-        int opcion = JOptionPane.showConfirmDialog(
-                this,
-                "¿Está seguro que desea salir del sistema?",
-                "Confirmar Salida",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE
-        );
 
-        if (opcion == JOptionPane.YES_OPTION) {
-            System.exit(0);
+    public void volverAlMain() {
+        int confirmacion = JOptionPane.showConfirmDialog(null,
+                "¿Estas seguro de cerrar la sesion?",
+                "Confirmar cierre de sesion",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            LoginView loginView = new LoginView();
+            loginView.setVisible(true);
+            dispose();
         }
     }
 

@@ -2,6 +2,7 @@ package ec.edu.sistemalicencias.view.crudView;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.uiDesigner.core.Spacer;
 import ec.edu.sistemalicencias.controller.UsuariosController;
 import ec.edu.sistemalicencias.model.entities.Usuarios;
 import ec.edu.sistemalicencias.model.exceptions.UsuarioException;
@@ -154,9 +155,9 @@ public class PanelActualizarView {
      */
     private void $$$setupUI$$$() {
         PanelMainUpdate = new JPanel();
-        PanelMainUpdate.setLayout(new GridLayoutManager(3, 1, new Insets(0, 0, 0, 0), -1, -1));
+        PanelMainUpdate.setLayout(new GridLayoutManager(4, 1, new Insets(0, 0, 0, 0), -1, -1));
         PanelBuscar = new JPanel();
-        PanelBuscar.setLayout(new GridLayoutManager(1, 4, new Insets(0, 0, 0, 0), -1, -1));
+        PanelBuscar.setLayout(new GridLayoutManager(1, 4, new Insets(5, 5, 5, 5), -1, -1));
         PanelMainUpdate.add(PanelBuscar, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, true));
         PanelBuscar.setBorder(BorderFactory.createTitledBorder(null, "Buscar usuario a actualizar", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
         lblIngresarCredencial = new JLabel();
@@ -177,11 +178,13 @@ public class PanelActualizarView {
         PanelBuscar.add(btnBuscar, new GridConstraints(0, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         PanelUpdateUser = new JPanel();
         PanelUpdateUser.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
-        PanelMainUpdate.add(PanelUpdateUser, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTH, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        PanelMainUpdate.add(PanelUpdateUser, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTH, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         final JScrollPane scrollPane1 = new JScrollPane();
-        PanelMainUpdate.add(scrollPane1, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTH, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, new Dimension(-1, 80), new Dimension(-1, 150), new Dimension(-1, 200), 0, false));
+        PanelMainUpdate.add(scrollPane1, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTH, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, 1, new Dimension(-1, 80), new Dimension(-1, 150), new Dimension(-1, 200), 0, false));
         tblUsuariosEncontrados = new JTable();
         scrollPane1.setViewportView(tblUsuariosEncontrados);
+        final Spacer spacer1 = new Spacer();
+        PanelMainUpdate.add(spacer1, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
     }
 
     /**

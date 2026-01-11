@@ -20,7 +20,6 @@ import ec.edu.sistemalicencias.model.entities.Usuarios;
 public class LoginView extends JFrame {
     private JPanel PanelLogin;
     private JLabel lblIniciarSesion;
-    private JComboBox cbxUsers;
     private JLabel lblusuario;
     private JTextField txtcontrasenia;
     private JLabel lblcontrasenia;
@@ -106,52 +105,15 @@ public class LoginView extends JFrame {
 
         // SOLUCIÓN: Un solo ActionListener simplificado (usando Lambda)
         btnIngresar.addActionListener(e -> {
-            // 1. "Agarramos" lo que el usuario escribió
-            String inputUsuario = txtusuario.getText();
-            // Para JPasswordField se recomienda usar getPassword(), pero para pruebas rápidas:
-            String inputPassword = txtcontrasenia.getText();
-
-            // Validar campos vacíos antes de ir a la DB
-            if (inputUsuario.isEmpty() || inputPassword.isEmpty()) {
-                JOptionPane.showMessageDialog(LoginView.this, "Por favor, llene todos los campos");
-                return;
-            }
-
-            // 2. Llamamos al DAO
-            UsuariosDAO dao = new UsuariosDAO();
-
-            try {
-                Usuarios usuarioEncontrado = dao.login(inputUsuario, inputPassword);
-
-                // 3. LA COMPARACIÓN FINAL
-                if (usuarioEncontrado != null) {
-                    JOptionPane.showMessageDialog(LoginView.this, "¡Acceso Correcto! Bienvenido " + usuarioEncontrado.getNombreUsuario());
-
-                    // Aquí abrirías tu siguiente ventana y cierras esta
-                    // new MenuPrincipal().setVisible(true);
-                    // this.dispose();
-                } else {
-                    JOptionPane.showMessageDialog(LoginView.this, "Usuario o contraseña incorrectos",
-                            "Error de Autenticación", JOptionPane.ERROR_MESSAGE);
-                }
-
-            } catch (BaseDatosException ex) {
-                JOptionPane.showMessageDialog(LoginView.this, "Error de base de datos: " + ex.getMessage());
-                ex.printStackTrace();
-            }
-        });
-// Abrir ventanas segun el rol
-        //Logica del Login
-        btnIngresar.addActionListener(e -> {
             String inputUsuario = txtusuario.getText();
             String inputPassword = txtcontrasenia.getText();
 
             if (inputUsuario.isEmpty() || inputPassword.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Por favor, llene todos los campos");
+                JOptionPane.showMessageDialog(this,
+                        "Por favor, llene todos los campos");
                 return;
             }
 
-            // Cambiar según como arreglaste el constructor del DAO
             UsuariosDAO dao = new UsuariosDAO();
 
             try {
@@ -161,27 +123,31 @@ public class LoginView extends JFrame {
                     String rol = usuarioEncontrado.getRol();
 
                     if (rol.equalsIgnoreCase("Administrador")) {
-                        AdminGestUsuarioView adminview = new AdminGestUsuarioView();
-                        adminview.setVisible(true);
+                        new AdminGestUsuarioView().setVisible(true);
                     } else if (rol.equalsIgnoreCase("Analista")) {
-                        MainView analistView = new MainView();
-                        analistView.setVisible(true);
+                        new MainView().setVisible(true);
                     } else {
                         JOptionPane.showMessageDialog(this, "Rol desconocido: " + rol);
                         return;
                     }
 
-                    this.dispose(); // Cerrar login
+                    this.dispose(); // cerrar login
 
                 } else {
-                    JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos",
-                            "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(
+                            this,
+                            "Usuario o contraseña incorrectos",
+                            "Error de Autenticación",
+                            JOptionPane.ERROR_MESSAGE
+                    );
+                    txtcontrasenia.setText("");
+                    txtusuario.requestFocus();
                 }
+
             } catch (BaseDatosException ex) {
                 JOptionPane.showMessageDialog(this, "Error de base de datos: " + ex.getMessage());
             }
         });
-
 
     }
 

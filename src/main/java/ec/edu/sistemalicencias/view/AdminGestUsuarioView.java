@@ -32,7 +32,7 @@ public class AdminGestUsuarioView extends JFrame {
 
     public AdminGestUsuarioView() {
         setTitle("Gestión de Usuarios");
-        setSize(1024, 576);
+        setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -62,9 +62,6 @@ public class AdminGestUsuarioView extends JFrame {
         panelContenido.add(panelReporteView.$$$getRootComponent$$$(), "REPORTE");
 
 
-        //Redimencionamiento de Images
-
-
         // Panel INICIO
         JLabel lblInicio = new JLabel("Bienvenido al sistema ", SwingConstants.CENTER);
         lblInicio.setFont(new Font("Arial", Font.BOLD, 30));
@@ -87,14 +84,21 @@ public class AdminGestUsuarioView extends JFrame {
         reportesButton.addActionListener(e -> cardLayout.show(panelContenido, "REPORTE")
         );
 
-        cerrarSesionButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                LoginView loginView = new LoginView();
-                loginView.setVisible(true);
-                dispose();
-            }
-        });
+        cerrarSesionButton.addActionListener(e -> cerrarSesion());
+
+    }
+
+    private void cerrarSesion() {
+        int confirmacion = JOptionPane.showConfirmDialog(null,
+                "¿Estas seguro de cerrar la sesion?",
+                "Confirmar cierre de sesion",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            LoginView loginView = new LoginView();
+            loginView.setVisible(true);
+            dispose();
+        }
     }
 
     /**
