@@ -79,7 +79,7 @@ public class GenerarReporteView extends JFrame {
     }
 
     private void configurarEventos() {
-
+        //btnGeneratePDF.addActionListener();
         btnGoBack.addActionListener(e -> dispose());
         cmbFilterUsers.addActionListener(e -> {
             String filtroSeleccionado = (String) cmbFilterUsers.getSelectedItem();
@@ -155,14 +155,6 @@ public class GenerarReporteView extends JFrame {
         lblViewUsers = new JLabel();
         lblViewUsers.setText("Filtrar por:");
         panelFilter.add(lblViewUsers, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        cmbFilterUsers = new JComboBox();
-        final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
-        defaultComboBoxModel1.addElement("Todos");
-        defaultComboBoxModel1.addElement("Emitidos");
-        defaultComboBoxModel1.addElement("No emitidos");
-        defaultComboBoxModel1.addElement("Vencidos");
-        cmbFilterUsers.setModel(defaultComboBoxModel1);
-        panelFilter.add(cmbFilterUsers, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         lblDescription = new JLabel();
         lblDescription.setText("label");
         panelFilter.add(lblDescription, new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));

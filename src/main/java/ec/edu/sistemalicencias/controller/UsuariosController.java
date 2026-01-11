@@ -33,31 +33,12 @@ public class UsuariosController {
         return usuariosService.buscarPorId(id);
     }
 
-    public Usuarios buscarUsuarioPorNombre(String nombre) throws  UsuarioException{
-        return usuariosService.buscarNombre(nombre);
-    }
-
-    public Usuarios buscarUsuarioPorCuenta(String nombre_usuario) throws UsuarioException{
-        return usuariosService.buscarNombreUsuario(nombre_usuario);
-    }
-
     public void eliminarUsuario(Long id) throws UsuarioException {
-        usuariosService.eliminarUsuarioPorID(id);
-    }
-
-    public void eliminarUsuarioPorCedula(String cedula) throws UsuarioException{
-        usuariosService.eliminarUsuarioPorCedula(cedula);
-    }
-
-    public void eliminarUsuarioPorNombre(String nombre) throws UsuarioException{
-        usuariosService.eliminaUsuarioPorNombre(nombre);
-    }
-
-    public void eliminarUsuarioPorCuenta(String nombre_usuario) throws UsuarioException{
-        usuariosService.eliminarUsuarioPorCuenta(nombre_usuario);
+        usuariosService.eliminarUsuario(id);
     }
 
     public List<Usuarios> listarTodosUsuarios() throws UsuarioException {
         return usuariosService.obtenerTodosUsuarios();
     }
+
 }
