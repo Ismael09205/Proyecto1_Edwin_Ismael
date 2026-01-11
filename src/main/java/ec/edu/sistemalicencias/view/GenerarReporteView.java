@@ -79,7 +79,7 @@ public class GenerarReporteView extends JFrame {
     }
 
     private void configurarEventos() {
-        //btnGeneratePDF.addActionListener();
+
         btnGoBack.addActionListener(e -> dispose());
         cmbFilterUsers.addActionListener(e -> {
             String filtroSeleccionado = (String) cmbFilterUsers.getSelectedItem();

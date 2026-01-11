@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import ec.edu.sistemalicencias.dao.UsuariosDAO;
 
 import ec.edu.sistemalicencias.model.entities.Usuarios;
+
 public class LoginView extends JFrame {
     private JPanel PanelLogin;
     private JLabel lblIniciarSesion;
@@ -33,7 +34,7 @@ public class LoginView extends JFrame {
         // Configuración básica de la ventana
 
         setTitle("Bienvenido - Sistema de Licencias de Conducir");
-        setSize(1024, 576);
+        setSize(820, 550);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setContentPane(PanelLogin);
@@ -78,7 +79,7 @@ public class LoginView extends JFrame {
         // Agrega margen de 30 pixeles alrededor de todo el contenido
         PanelLogin.setBorder(new EmptyBorder(0, 20, 10, 0));
         txtcontrasenia.setBackground(Color.WHITE);
-        txtcontrasenia.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        txtcontrasenia.setFont(new Font("Arial", Font.PLAIN, 14));
         txtcontrasenia.setForeground(new Color(50, 50, 50));
 
 // Crear un borde personalizado
@@ -162,12 +163,10 @@ public class LoginView extends JFrame {
                     if (rol.equalsIgnoreCase("Administrador")) {
                         AdminGestUsuarioView adminview = new AdminGestUsuarioView();
                         adminview.setVisible(true);
-                    }
-                    else if (rol.equalsIgnoreCase("Analista")) {
+                    } else if (rol.equalsIgnoreCase("Analista")) {
                         MainView analistView = new MainView();
                         analistView.setVisible(true);
-                    }
-                    else {
+                    } else {
                         JOptionPane.showMessageDialog(this, "Rol desconocido: " + rol);
                         return;
                     }
@@ -182,7 +181,6 @@ public class LoginView extends JFrame {
                 JOptionPane.showMessageDialog(this, "Error de base de datos: " + ex.getMessage());
             }
         });
-
 
 
     }
@@ -204,33 +202,34 @@ public class LoginView extends JFrame {
      */
     private void $$$setupUI$$$() {
         PanelLogin = new JPanel();
-        PanelLogin.setLayout(new GridLayoutManager(8, 2, new Insets(0, 0, 0, 0), -1, -1));
-        final Spacer spacer1 = new Spacer();
-        PanelLogin.add(spacer1, new GridConstraints(7, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        lblusuario = new JLabel();
-        lblusuario.setText("Usuario");
-        PanelLogin.add(lblusuario, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        lblcontrasenia = new JLabel();
-        lblcontrasenia.setText("Contraseña");
-        PanelLogin.add(lblcontrasenia, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        btnIngresar = new JButton();
-        btnIngresar.setText("Ingresar");
-        PanelLogin.add(btnIngresar, new GridConstraints(6, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        PanelLogin.setLayout(new GridLayoutManager(1, 2, new Insets(0, 0, 0, 0), -1, -1));
+        final JPanel panel1 = new JPanel();
+        panel1.setLayout(new GridLayoutManager(7, 1, new Insets(0, 0, 0, 0), -1, -1));
+        PanelLogin.add(panel1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, true));
         lblIniciarSesion = new JLabel();
         lblIniciarSesion.setText("INICIAR SESION");
-        PanelLogin.add(lblIniciarSesion, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel1.add(lblIniciarSesion, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         lblImagen_Login = new JLabel();
         lblImagen_Login.setIcon(new ImageIcon(getClass().getResource("/icons/ingreso.png")));
         lblImagen_Login.setText("");
-        PanelLogin.add(lblImagen_Login, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel1.add(lblImagen_Login, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 10, false));
+        lblcontrasenia = new JLabel();
+        lblcontrasenia.setText("Contraseña");
+        panel1.add(lblcontrasenia, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        lblusuario = new JLabel();
+        lblusuario.setText("Usuario");
+        panel1.add(lblusuario, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        txtusuario = new JTextField();
+        panel1.add(txtusuario, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        txtcontrasenia = new JPasswordField();
+        panel1.add(txtcontrasenia, new GridConstraints(5, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        btnIngresar = new JButton();
+        btnIngresar.setText("Ingresar");
+        panel1.add(btnIngresar, new GridConstraints(6, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         lblImagen = new JLabel();
         lblImagen.setIcon(new ImageIcon(getClass().getResource("/icons/images.jpeg")));
         lblImagen.setText("");
-        PanelLogin.add(lblImagen, new GridConstraints(0, 1, 8, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        txtusuario = new JTextField();
-        PanelLogin.add(txtusuario, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        txtcontrasenia = new JPasswordField();
-        PanelLogin.add(txtcontrasenia, new GridConstraints(5, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        PanelLogin.add(lblImagen, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**

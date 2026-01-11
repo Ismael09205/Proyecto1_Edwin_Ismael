@@ -74,7 +74,7 @@ public class Usuarios implements Validable {
 
     public void setProfesion(String profesion) {
         if (profesion == null || profesion.trim().isEmpty()){
-            throw new DatosInvalidosException("La profesion no puede estar vacío.");
+            throw new DatosInvalidosException("La profesión no puede estar vacía.");
         }
         this.profesion = profesion.trim().toUpperCase();
     }
@@ -190,6 +190,10 @@ public class Usuarios implements Validable {
 
         if (cedula == null || !cedula.matches("\\d{10}") || !validarCedulaEc(cedula)){
             errores.append("- Cedula obligatoria\n");
+        }
+
+        if (telefono == null || telefono.trim().isEmpty()){
+            errores.append("- El telefono es obligatorio\n");
         }
 
         if (nombreUsuario == null || nombreUsuario.trim().isEmpty()){

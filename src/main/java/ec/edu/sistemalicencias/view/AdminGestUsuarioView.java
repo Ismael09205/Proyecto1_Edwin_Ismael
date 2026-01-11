@@ -56,65 +56,14 @@ public class AdminGestUsuarioView extends JFrame {
         //Panel ELIMINAR
         PanelEliminarView panelEliminarView = new PanelEliminarView(controller);
         panelContenido.add(panelEliminarView.$$$getRootComponent$$$(), "ELIMINAR");
-        //Redimencionamiento de Images
-
-        ImageIcon icon = new ImageIcon(
-                LoginView.class.getResource("/icons/actualizar.png")
-        );
-
-        Image img2 = icon.getImage();
-
-        Image imgEscalada = img2.getScaledInstance(
-                20, 20,
-                Image.SCALE_SMOOTH
-        );
-
-        lblimActu.setIcon(new ImageIcon(imgEscalada));
-
-        // Icono crear
-
-        ImageIcon iconCrear = new ImageIcon(
-                LoginView.class.getResource("/icons/guardar.png")
-        );
-
-        Image img3 = icon.getImage();
-
-        Image imgEscaladaCrear = img3.getScaledInstance(
-                20, 20,
-                Image.SCALE_SMOOTH
-        );
-
-        lblimCrear.setIcon(new ImageIcon(imgEscaladaCrear));
-        //Icono Borra
-
-        ImageIcon iconBorrar = new ImageIcon(
-                LoginView.class.getResource("/icons/eliminar.png")
-        );
-
-        Image imgBorrar = icon.getImage();
-
-        Image imgEscaladaBorrar = imgBorrar.getScaledInstance(
-                20, 20,
-                Image.SCALE_SMOOTH
-        );
-
-        lblimEliminar.setIcon(new ImageIcon(imgEscaladaBorrar));
-        //Reportes
-
-        ImageIcon iconReportes = new ImageIcon(
-                LoginView.class.getResource("/icons/mostrar.png")
-        );
-
-        Image imgMostrar = icon.getImage();
-
-        Image imgEscaladaMostrar = imgMostrar.getScaledInstance(
-                20, 20,
-                Image.SCALE_SMOOTH
-        );
-
-        lblimReportes.setIcon(new ImageIcon(imgEscaladaMostrar));
 
         //Panel REPORTE
+        PanelReporteView panelReporteView = new PanelReporteView(controller);
+        panelContenido.add(panelReporteView.$$$getRootComponent$$$(), "REPORTE");
+
+
+        //Redimencionamiento de Images
+
 
         // Panel INICIO
         JLabel lblInicio = new JLabel("Bienvenido al sistema ", SwingConstants.CENTER);
@@ -135,8 +84,7 @@ public class AdminGestUsuarioView extends JFrame {
                 cardLayout.show(panelContenido, "ELIMINAR")
         );
 
-        reportesButton.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Reportes en desarrollo")
+        reportesButton.addActionListener(e -> cardLayout.show(panelContenido, "REPORTE")
         );
 
         cerrarSesionButton.addActionListener(new ActionListener() {
@@ -160,41 +108,25 @@ public class AdminGestUsuarioView extends JFrame {
         panel1 = new JPanel();
         panel1.setLayout(new GridLayoutManager(1, 3, new Insets(0, 0, 0, 0), -1, -1));
         final JPanel panel2 = new JPanel();
-        panel2.setLayout(new GridLayoutManager(6, 5, new Insets(0, 0, 0, 0), -1, -1));
+        panel2.setLayout(new GridLayoutManager(6, 1, new Insets(0, 0, 0, 0), -1, -1));
         panel1.add(panel2, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         crearButton = new JButton();
         crearButton.setText("Crear");
-        panel2.add(crearButton, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel2.add(crearButton, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(180, 60), null, 0, false));
         actualizarButton = new JButton();
         actualizarButton.setText("Actualizar");
-        panel2.add(actualizarButton, new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel2.add(actualizarButton, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(180, 60), null, 0, false));
         eliminarButton = new JButton();
         eliminarButton.setText("Eliminar");
-        panel2.add(eliminarButton, new GridConstraints(2, 0, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel2.add(eliminarButton, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(180, 60), null, 0, false));
         reportesButton = new JButton();
         reportesButton.setText("Reportes");
-        panel2.add(reportesButton, new GridConstraints(3, 0, 1, 4, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel2.add(reportesButton, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(180, 60), null, 0, false));
         cerrarSesionButton = new JButton();
         cerrarSesionButton.setText("Cerrar Sesion");
-        panel2.add(cerrarSesionButton, new GridConstraints(5, 0, 1, 5, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel2.add(cerrarSesionButton, new GridConstraints(5, 0, 1, 1, GridConstraints.ANCHOR_SOUTH, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(180, 60), null, 0, false));
         final Spacer spacer1 = new Spacer();
-        panel2.add(spacer1, new GridConstraints(4, 0, 1, 5, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        lblimCrear = new JLabel();
-        lblimCrear.setIcon(new ImageIcon(getClass().getResource("/icons/guardar.png")));
-        lblimCrear.setText("");
-        panel2.add(lblimCrear, new GridConstraints(0, 1, 1, 4, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        lblimActu = new JLabel();
-        lblimActu.setIcon(new ImageIcon(getClass().getResource("/icons/actualizar.png")));
-        lblimActu.setText("");
-        panel2.add(lblimActu, new GridConstraints(1, 2, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        lblimEliminar = new JLabel();
-        lblimEliminar.setIcon(new ImageIcon(getClass().getResource("/icons/eliminar.png")));
-        lblimEliminar.setText("");
-        panel2.add(lblimEliminar, new GridConstraints(2, 3, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        lblimReportes = new JLabel();
-        lblimReportes.setIcon(new ImageIcon(getClass().getResource("/icons/mostrar.png")));
-        lblimReportes.setText("");
-        panel2.add(lblimReportes, new GridConstraints(3, 4, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel2.add(spacer1, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         panelContenido = new JPanel();
         panelContenido.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
         panel1.add(panelContenido, new GridConstraints(0, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
