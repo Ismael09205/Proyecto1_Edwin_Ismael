@@ -33,7 +33,7 @@ public class DatabaseConfig {
         this.driver = "org.postgresql.Driver";
         this.url = "jdbc:postgresql://localhost:5432/sistema_licencias";
         this.usuario = "postgres";
-        this.password = "Ipdemon001";
+        this.password = "root";
 
         try {
             // Cargar el driver JDBC

@@ -14,6 +14,7 @@ public interface Validable {
      * @throws DocumentoInvalidoException si hay errores de validación
      */
     boolean validar() throws DocumentoInvalidoException;
+
     /**
      * Obtiene un mensaje descriptivo del resultado de validación
      * @return Mensaje de validación
