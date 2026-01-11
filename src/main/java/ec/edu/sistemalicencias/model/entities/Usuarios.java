@@ -177,6 +177,7 @@ public class Usuarios implements Validable {
             return false;
         }
     }
+    @Override
     public boolean validar() throws DocumentoInvalidoException {
         StringBuilder errores = new StringBuilder();
 
@@ -212,6 +213,8 @@ public class Usuarios implements Validable {
         }
         return true;
     }
+
+
 
     @Override
     public String obtenerMensajeValidacion() {

@@ -39,14 +39,18 @@ public class UsuariosService {
 
     public void actualizarUsuario(Usuarios usuarios) throws UsuarioException {
         try {
-            usuarios.validar();
-
             if (usuarios.getId() == null || usuariosDAO.buscarPorId(usuarios.getId()) == null) {
                 throw new UsuarioException("El usuario no existe en el sistema");
             }
+
+            Usuarios userExiste = usuariosDAO.buscarPorId(usuarios.getId());
+            if (usuarios.getContrasenia() == null || usuarios.getContrasenia().trim().isEmpty()){
+                usuarios.setContrasenia(userExiste.getContrasenia());
+            }
+            usuarios.validar();
             usuariosDAO.actualizar(usuarios);
         } catch (DocumentoInvalidoException e) {
-            throw new UsuarioException("Error de validacion de datos: " + e.getMessage(), e);
+            throw new UsuarioException("Error de validación de datos \n" + e.getMessage(), e);
         } catch (BaseDatosException e) {
             throw new UsuarioException("Error al actualizar el usuario en la base de datos", e);
         }
