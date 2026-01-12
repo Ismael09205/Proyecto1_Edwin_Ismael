@@ -1,0 +1,60 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\Ismael\Desktop\Launch\LicenciasEcuador.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\Ismael\Desktop\Launch\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.021.000_008
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Python314\Scripts\;C:\Python314\;D:\Programas_3_semestre\Python\Scripts\;D:\Programas_3_semestre\Python\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;D:\Programas_3_semestre\GIT\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Users\Ismael\AppData\Local\Microsoft\WindowsApps;D:\Programas_3_semestre\POO\IntelliJ IDEA Community Edition 2025.2.2\bin;D:\Programas_3_semestre\Analisis_Pycharm\PyCharm 2025.2.3\bin;D:\Programas_3_semestre\VISUAL\Microsoft VS Code\bin;C:\Users\Ismael\AppData\Roaming\npm;C:\Program Files\Java\jre1.8.0_471\bin
+JRE paths:	;C:\Python314\Scripts\;C:\Python314\;D:\Programas_3_semestre\Python\Scripts\;D:\Programas_3_semestre\Python\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;D:\Programas_3_semestre\GIT\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Users\Ismael\AppData\Local\Microsoft\WindowsApps;D:\Programas_3_semestre\POO\IntelliJ IDEA Community Edition 2025.2.2\bin;D:\Programas_3_semestre\Analisis_Pycharm\PyCharm 2025.2.3\bin;D:\Programas_3_semestre\VISUAL\Microsoft VS Code\bin;C:\Users\Ismael\AppData\Roaming\npm;C:\Program Files\Java\jre1.8.0_471\bin
+Check launcher:	C:\Python314\Scripts\bin\javaw.exe (not found)
+Check launcher:	C:\Python314\bin\javaw.exe (not found)
+Check launcher:	D:\Programas_3_semestre\Python\Scripts\bin\javaw.exe (not found)
+Check launcher:	D:\Programas_3_semestre\Python\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Common Files\Oracle\Java\java8path\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static\bin\javaw.exe (not found)
+Check launcher:	D:\Programas_3_semestre\GIT\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\AMD\ATI.ACE\Core-Static\bin\javaw.exe (not found)
+Check launcher:	C:\Users\Ismael\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	D:\Programas_3_semestre\POO\IntelliJ IDEA Community Edition 2025.2.2\bin\javaw.exe (not found)
+Check launcher:	D:\Programas_3_semestre\Analisis_Pycharm\PyCharm 2025.2.3\bin\javaw.exe (not found)
+Check launcher:	D:\Programas_3_semestre\VISUAL\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Users\Ismael\AppData\Roaming\npm\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jre1.8.0_471\bin\javaw.exe (OK)
+Version string: 1.008.000_471 / 64-Bit (Ignore)
+64-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Version string: 1.008.000 / 64-Bit (Ignore)
+Ignore:		1.008.000
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_471
+Version string: 1.008.000_471 / 64-Bit (Ignore)
+Ignore:		1.008.000_471
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+64-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+64-bit search:	SOFTWARE\JavaSoft\JRE...
+32-bit search:	SOFTWARE\JavaSoft\JRE...
+64-bit search:	SOFTWARE\JavaSoft\JDK...
+Check:		SOFTWARE\JavaSoft\JDK\21.0.8
+Version string: 1.021.000_008 / 64-Bit (OK)
+Check launcher:	D:\Programas_3_semestre\POO\JDK\bin\javaw.exe (OK)
+Match:		1.021.000_008
+Runtime used:	1.021.000_008 (64-bit)
+Launcher:	D:\Programas_3_semestre\POO\JDK\bin\javaw.exe
+Launcher args:	-jar "C:\Users\Ismael\Desktop\Launch\LicenciasEcuador.exe"
+Args length:	58/32768 chars
+Exit code:	0
