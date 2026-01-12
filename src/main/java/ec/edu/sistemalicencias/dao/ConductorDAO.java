@@ -331,7 +331,7 @@ public class ConductorDAO implements Persistible<Conductor> {
         conductor.setDocumentosValidados(rs.getBoolean("documentos_validados"));
         conductor.setObservaciones(rs.getString("observaciones"));
 
-        Date fechaReg = rs.getDate("fechaRegistro");
+        Date fechaReg = rs.getDate("created_at");
         if (fechaReg != null){
             conductor.setFechaRegistro(fechaReg.toLocalDate());
         }

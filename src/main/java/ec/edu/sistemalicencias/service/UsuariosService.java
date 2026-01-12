@@ -38,22 +38,34 @@ public class UsuariosService {
 
     }
 
-    public void actualizarUsuario(Usuarios usuarios)throws UsuarioException{
+    public void actualizarUsuario(Usuarios usuarios) throws UsuarioException {
         try {
-            usuarios.validar();
-
-            if (usuarios.getId() == null || usuariosDAO.buscarPorId(usuarios.getId())==null){
-                throw new UsuarioException("El usuario no existe en el sistema");
+            // Validación inicial del ID
+            if (usuarios.getId() == null) {
+                throw new UsuarioException("Error: El ID del usuario es nulo.");
             }
 
+
+            Usuarios userExiste = usuariosDAO.buscarPorId(usuarios.getId());
+
+            if (userExiste == null) {
+                throw new UsuarioException("El usuario con ID " + usuarios.getId() + " no existe en el sistema.");
+            }
+
+
+            if (usuarios.getContrasenia() == null || usuarios.getContrasenia().trim().isEmpty()){
+                usuarios.setContrasenia(userExiste.getContrasenia());
+            }
+
+
+            usuarios.validar();
             usuariosDAO.actualizar(usuarios);
-        }catch (DocumentoInvalidoException e){
-            throw new UsuarioException("Error de validacion de datos: "+ e.getMessage(),e);
-        }catch (BaseDatosException e){
-            throw new UsuarioException("Error al actualizar el usuario en la base de datos", e);
+
+        } catch (DocumentoInvalidoException e) {
+            throw new UsuarioException("Error de validación de datos: \n" + e.getMessage(), e);
+        } catch (BaseDatosException e) {
+            throw new UsuarioException("Error crítico en la base de datos al actualizar", e);
         }
-
-
     }
 
     public void eliminarUsuario(Long id) throws UsuarioException {
@@ -80,7 +92,20 @@ public class UsuariosService {
             throw new UsuarioException("Error al buscar usuario", e);
         }
     }
-
+    public Usuarios buscarNombre(String nombre) throws UsuarioException {
+        try {
+            return usuariosDAO.buscarPorNombre(nombre);
+        } catch (BaseDatosException e) {
+            throw new UsuarioException("Error al buscar usuario por nombre", e);
+        }
+    }
+    public Usuarios buscarNombreUsuario(String nombreUsuario) throws UsuarioException {
+        try {
+            return usuariosDAO.buscarPorNombreUsuario(nombreUsuario);
+        } catch (BaseDatosException e) {
+            throw new UsuarioException("Error al buscar un usuario por su cuenta de usuario", e);
+        }
+    }
     public Usuarios buscarPorCedula(String cedula) throws UsuarioException {
         try {
             return usuariosDAO.buscarPorCedula(cedula);

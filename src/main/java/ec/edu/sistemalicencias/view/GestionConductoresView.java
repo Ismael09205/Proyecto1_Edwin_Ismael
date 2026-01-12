@@ -193,6 +193,7 @@ public class GestionConductoresView extends JFrame {
             }
         } catch (LicenciaException ex) {
             controller.mostrarError("Error al cargar conductores: " + ex.getMessage());
+
         }
     }
 

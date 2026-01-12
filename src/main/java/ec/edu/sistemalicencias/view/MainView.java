@@ -41,7 +41,7 @@ public class MainView extends JFrame {
     private JButton btnConsultarLicencias;
     private JButton btnGenerarDocumento;
     private JButton btnSalir;
-    private JButton btnGenerarReporte;
+
 
     /**
      * Constructor de la vista principal
@@ -115,7 +115,6 @@ public class MainView extends JFrame {
         btnEmitirLicencia = crearBoton("Emitir Licencia");
         btnConsultarLicencias = crearBoton("Consultar Licencias");
         btnGenerarDocumento = crearBoton("Generar Documento PDF");
-        btnGenerarReporte = crearBoton("Generar reporte");
         btnSalir = crearBoton("Salir");
 
         // Agregar botones al panel
@@ -125,7 +124,6 @@ public class MainView extends JFrame {
         panelModulos.add(btnEmitirLicencia);
         panelModulos.add(btnConsultarLicencias);
         panelModulos.add(btnGenerarDocumento);
-        panelModulos.add(btnGenerarReporte);
         panelModulos.add(btnSalir);
         panelModulos.add(new JLabel()); // Celda vacía para balancear
 
@@ -180,8 +178,6 @@ public class MainView extends JFrame {
         // Botón Generar Documento PDF
         btnGenerarDocumento.addActionListener(e -> generarDocumentoPDF());
 
-        //Gotón Generar Reporte
-        btnGenerarReporte.addActionListener(e -> abrirReporte());
 
         // Botón Salir
         btnSalir.addActionListener(e -> volverAlMain());

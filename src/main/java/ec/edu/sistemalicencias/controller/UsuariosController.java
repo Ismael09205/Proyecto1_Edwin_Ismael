@@ -28,6 +28,12 @@ public class UsuariosController {
     public Usuarios buscarUsuarioPorCedula(String cedula) throws UsuarioException{
         return usuariosService.buscarPorCedula(cedula);
     }
+    public Usuarios buscarUsuarioPorNombre(String nombre) throws  UsuarioException{
+        return usuariosService.buscarNombre(nombre);
+    }
+    public Usuarios buscarUsuarioPorCuenta(String nombre_usuario) throws UsuarioException{
+        return usuariosService.buscarNombreUsuario(nombre_usuario);
+    }
 
     public Usuarios buscarUsuarioPorID(Long id) throws UsuarioException{
         return usuariosService.buscarPorId(id);

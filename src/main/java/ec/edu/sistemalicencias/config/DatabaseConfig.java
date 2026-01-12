@@ -31,9 +31,9 @@ public class DatabaseConfig {
     private DatabaseConfig() {
         // Configuración por defecto - puede ser sobreescrita mediante properties
         this.driver = "org.postgresql.Driver";
-        this.url = "jdbc:postgresql://localhost:5432/sistema_licencias";
+        this.url = "jdbc:postgresql://yamabiko.proxy.rlwy.net:57354/railway";
         this.usuario = "postgres";
-        this.password = "root";
+        this.password = "wMaFILNxSMoNOdRaOXdZSZAlPrmqdBXe";
 
         try {
             // Cargar el driver JDBC

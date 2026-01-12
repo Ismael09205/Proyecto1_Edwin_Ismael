@@ -3,7 +3,6 @@ package ec.edu.sistemalicencias.dao;
 import ec.edu.sistemalicencias.config.DatabaseConfig;
 import ec.edu.sistemalicencias.model.entities.Usuarios;
 import ec.edu.sistemalicencias.model.exceptions.BaseDatosException;
-import ec.edu.sistemalicencias.model.exceptions.DatosInvalidosException;
 import ec.edu.sistemalicencias.model.interfaces.Persistible;
 
 import java.sql.*;
@@ -25,7 +24,7 @@ public class UsuariosDAO implements Persistible<Usuarios> {
 
         try (
                 Connection conn = dbConfig.obtenerConexion();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+                PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, nombreUsuario);
             stmt.setString(2, contrasena);
@@ -53,13 +52,6 @@ public class UsuariosDAO implements Persistible<Usuarios> {
             return usuario.getId();
         }
     }
-
-    @Override
-    public Usuarios buscarPorId(Long id) throws BaseDatosException {
-        return null;
-    }
-
-
     private Long insertar(Usuarios usuario) throws BaseDatosException{
         String sql = "INSERT INTO usuarios(nombre, apellido, cedula, "+
                 "profesion, telefono, direccion, nombre_usuario, contrasenia, rol)" +
@@ -138,6 +130,136 @@ public class UsuariosDAO implements Persistible<Usuarios> {
         }
     }
 
+    @Override
+    public boolean eliminar(Long id) throws BaseDatosException {
+        String sql = "DELETE FROM usuarios where id = ?";
+
+        Connection conn = null;
+        PreparedStatement stmt = null;
+
+        try {
+            conn = dbConfig.obtenerConexion();
+            stmt = conn.prepareStatement(sql);
+            stmt.setLong(1, id);
+
+            int filasAfectadas = stmt.executeUpdate();
+            return filasAfectadas > 0;
+
+        } catch (SQLException e) {
+            throw new BaseDatosException("Error al eliminar usuario: " + e.getMessage(), e);
+        } finally {
+            cerrarRecursos(conn, stmt, null);
+        }
+    }
+
+    public boolean eliminarPorCedula(String cedula) throws BaseDatosException {
+        String sql = "DELETE FROM usuarios WHERE cedula = ?";
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            conn = dbConfig.obtenerConexion();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, cedula);
+
+            int filasAfectadas = stmt.executeUpdate();
+            return filasAfectadas > 0;
+
+        }catch (SQLException e){
+            throw new BaseDatosException("Error al eliminar usuario por cedula: "+e.getMessage(),e);
+        }finally {
+            cerrarRecursos(conn, stmt, null);
+        }
+    }
+
+    public boolean eliminarPorNombre(String nombre) throws BaseDatosException {
+        String sql = "DELETE FROM usuarios WHERE nombre = ?";
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            conn = dbConfig.obtenerConexion();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, nombre);
+
+            int filasAfectadas = stmt.executeUpdate();
+            return filasAfectadas > 0;
+
+        }catch (SQLException e){
+            throw new BaseDatosException("Error al eliminar usuario por cedula: "+e.getMessage(),e);
+        }finally {
+            cerrarRecursos(conn, stmt, null);
+        }
+    }
+
+    public boolean eliminarPorCuenta(String nombre_usaurio) throws BaseDatosException {
+        String sql = "DELETE FROM usuarios WHERE nombre_usuario = ?";
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            conn = dbConfig.obtenerConexion();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, nombre_usaurio);
+
+            int filasAfectadas = stmt.executeUpdate();
+            return filasAfectadas > 0;
+
+        }catch (SQLException e){
+            throw new BaseDatosException("Error al eliminar usuario por cedula: "+e.getMessage(),e);
+        }finally {
+            cerrarRecursos(conn, stmt, null);
+        }
+    }
+
+    @Override
+    public Usuarios buscarPorId(Long id) throws BaseDatosException {
+        String sql = "SELECT * FROM usuarios WHERE id = ?";
+
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            conn = dbConfig.obtenerConexion();
+            stmt = conn.prepareStatement(sql);
+            stmt.setLong(1,id);
+
+            rs = stmt.executeQuery();
+
+            if (rs.next()){
+                return mapearResults(rs);
+            }
+            return  null;
+        }catch (SQLException e) {
+            throw new BaseDatosException("Error al buscar usuario por ID: "+e.getMessage(), e);
+        }finally {
+            cerrarRecursos(conn, stmt, rs);
+        }
+
+    }
+
+    public Usuarios buscarPorNombre(String nombre) throws BaseDatosException {
+        String sql = "SELECT * FROM usuarios WHERE  LOWER(nombre) LIKE LOWER (?)";
+
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = dbConfig.obtenerConexion();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1,"%"+nombre+"%");
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                return mapearResults(rs);
+            }
+            return null;
+        }catch (SQLException e){
+            throw new BaseDatosException("Error al intentar buscar conductor por nombres: "+e.getMessage(), e);
+        }finally {
+            cerrarRecursos(conn, stmt, rs);
+        }
+    }
+
+
     public Usuarios buscarPorCedula(String cedula) throws BaseDatosException {
         String sql = "SELECT * FROM usuarios where cedula = ?";
 
@@ -160,6 +282,32 @@ public class UsuariosDAO implements Persistible<Usuarios> {
 
         }catch (SQLException e){
             throw new BaseDatosException("Error al buscar usuario por cedula: "+e.getMessage(),e);
+        }finally {
+            cerrarRecursos(conn,stmt,rs);
+        }
+    }
+
+    public  Usuarios buscarPorNombreUsuario(String usuario) throws BaseDatosException{
+        String sql = "SELECT * FROM usuarios WHERE LOWER(nombre_usuario) LIKE LOWER (?)";
+
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            conn = dbConfig.obtenerConexion();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1,"%"+usuario+"%");
+
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                return mapearResults(rs);
+            }
+
+            return null;
+
+        }catch (SQLException e){
+            throw new BaseDatosException("Error al buscar usuario por usuario: "+e.getMessage(),e);
         }finally {
             cerrarRecursos(conn,stmt,rs);
         }
@@ -189,27 +337,7 @@ public class UsuariosDAO implements Persistible<Usuarios> {
         }
     }
 
-    @Override
-    public boolean eliminar(Long id) throws BaseDatosException {
-        String sql = "DELETE FROM usuarios where id = ?";
 
-        Connection conn = null;
-        PreparedStatement stmt = null;
-
-        try {
-            conn = dbConfig.obtenerConexion();
-            stmt = conn.prepareStatement(sql);
-            stmt.setLong(1, id);
-
-            int filasAfectadas = stmt.executeUpdate();
-            return filasAfectadas > 0;
-
-        } catch (SQLException e) {
-            throw new BaseDatosException("Error al eliminar conductor: " + e.getMessage(), e);
-        } finally {
-            cerrarRecursos(conn, stmt, null);
-        }
-    }
 
     private void cerrarRecursos(Connection conn, Statement stmt, ResultSet rs) {
         try {
@@ -221,7 +349,7 @@ public class UsuariosDAO implements Persistible<Usuarios> {
         }
     }
 
-    private Usuarios mapearResults(ResultSet rs) throws SQLException {
+    private Usuarios mapearResults (ResultSet rs) throws SQLException{
         Usuarios usuarios = new Usuarios();
 
         usuarios.setId(rs.getLong("id"));
@@ -232,23 +360,14 @@ public class UsuariosDAO implements Persistible<Usuarios> {
         usuarios.setTelefono(rs.getString("telefono"));
         usuarios.setDireccion(rs.getString("direccion"));
         usuarios.setNombreUsuario(rs.getString("nombre_usuario"));
+        usuarios.setContrasenia(rs.getString("contrasenia"));
         usuarios.setRol(rs.getString("rol"));
 
-
-        try {
-            usuarios.setContrasenia(rs.getString("contrasenia"));
-        } catch (DatosInvalidosException e) {
-
-            System.err.println("Aviso: Usuario ID " + usuarios.getId() + " tiene una clave que no cumple las nuevas reglas.");
-        }
-
         Date fechaReg = rs.getDate("fecha_registro");
-        if (fechaReg != null) {
+        if (fechaReg != null){
             usuarios.setFecha_registro(fechaReg.toLocalDate());
         }
         return usuarios;
     }
-
-
 }
 
